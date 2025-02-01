@@ -1,11 +1,183 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Inicio - Dulce's Faringthon" description="Descubre los dulces y postres más deliciosos, hechos con amor.">
+    <section class="second-Sec" id="Second-sec-id">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mx-auto second-sec">
+                    <img src="https://images.pexels.com/photos/8651023/pexels-photo-8651023.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"class="container-fluid">
+                </div>
+                <div class="col-lg-6 col-md-6 mx-auto second-sec">
+                    <h2><span id="Welcome">Bienvenidos a</span> Nuestra cocina</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae qui hic 
+                        recusandae veritatis id expedita eligendi cumque error deleniti numquam 
+                        rem voluptatum perferendis voluptates ullam magnam, ea enim, ut ad.</p>
+                    <a href="#about">Acerca de Nosotros</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SOBRE NOSOTROS -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos una dulcería con pasión por los sabores auténticos. Cada postre es elaborado con ingredientes de alta calidad para ofrecerte lo mejor.</p>
+            <a href="/#contact" class="btn-secondary">Contáctanos</a>
+        </div>
+    </section>
+
+    <!-- MENÚ DESTACADO -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Nuestros Productos</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="/images/cake-rusk.jpg" alt="Cake Rusk">
+                    <h3>Cake Rusk</h3>
+                    <p>$5.00 por kg</p>
+                </div>
+                <div class="menu-item">
+                    <img src="/images/chocolate-brownie.jpg" alt="Brownie de Chocolate">
+                    <h3>Brownie de Chocolate</h3>
+                    <p>$3.50 por porción</p>
+                </div>
+                <div class="menu-item">
+                    <img src="/images/milky-malt.jpg" alt="Milky Malt Cake">
+                    <h3>Milky Malt Cake</h3>
+                    <p>$15.00 - 2.5 libras</p>
+                </div>
+            </div>
+            <a href="/sweets" class="btn-primary">Ver Todo el Menú</a>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="gallery" class="gallery">
+        <h2>Galería</h2>
+        <div class="gallery-container">
+            <img src="/images/gallery1.jpg" alt="Dulces 1">
+            <img src="/images/gallery2.jpg" alt="Dulces 2">
+            <img src="/images/gallery3.jpg" alt="Dulces 3">
+            <img src="/images/gallery4.jpg" alt="Dulces 4">
+        </div>
+    </section>
+
 </Layout>
+<!-- 
+<style>
+/* ESTILOS GENERALES */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* HERO */
+.hero {
+    background-image: url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.hero-content span {
+    color: #c37a3e;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #c37a3e;
+}
+
+.btn-secondary {
+    background-color: #7c4a21;
+}
+
+/* SOBRE NOSOTROS */
+.about {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+/* MENÚ */
+.menu {
+    padding: 50px 0;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.menu-item h3 {
+    margin: 10px 0;
+}
+
+/* GALERÍA */
+.gallery {
+    padding: 50px 0;
+    background: #ffefdb;
+}
+
+.gallery-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery-container img {
+    width: 22%;
+    border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-container img {
+        width: 48%;
+    }
+}
+</style> -->

@@ -1,0 +1,195 @@
+<nav class="Navbar-Menu" id="Navbar-Menu-Id">
+    <div class="menu">
+        <!-- LOGO -->
+        <div class="leftside">
+            <img src="https://res.cloudinary.com/dwhbgia5f/image/upload/v1738347094/dulcerialogo_o0ytmn.jpg" alt="Logotipo de la dulcería" class="round-image">
+        </div>
+
+        <!-- MENÚ PARA ESCRITORIO Y MÓVIL -->
+        <div class="rightside" id="rightside">
+            <nav class="Icons">
+                <a href="/">Inicio</a>
+                <a href="/#about">Nosotros</a>
+                <a href="/#menu">Menú</a>
+                <a href="/#gallery">Galería</a>
+                <a href="/#feedback">Opiniones</a>
+                <a href="/#contact">Contacto</a>
+                <i class="fas fa-times-circle close-icon" id="closeMenu"></i>
+
+                <div class="social">
+                    <li id="Border"></li>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="/sweets" id="Sweet-Bakery">Dulcería</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- BOTÓN HAMBURGUESA PARA MÓVILES -->
+        <div class="menubar" id="menuToggle">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menuToggle");
+        const closeMenu = document.getElementById("closeMenu");
+        const rightside = document.getElementById("rightside");
+    
+        // Verificar si los elementos existen antes de usarlos
+        if (menuToggle && rightside) {
+            menuToggle.addEventListener("click", () => {
+                rightside.classList.toggle("open");
+            });
+        }
+    
+        if (closeMenu && rightside) {
+            closeMenu.addEventListener("click", () => {
+                rightside.classList.remove("open");
+            });
+        }
+    });
+    </script>
+    
+<!-- 
+<style>
+/* ESTILOS GENERALES */
+/* .Navbar-Menu {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+.leftside img {
+    width: 120px;
+}
+
+/* MENÚ DE ESCRITORIO */
+/* .rightside {
+    display: flex;
+    align-items: center;
+}
+
+.Icons a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.Icons a:hover {
+    color: #c37a3e;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+}
+
+.social a {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.social a:hover {
+    color: #c37a3e;
+}
+
+#Sweet-Bakery {
+    padding: 8px 15px;
+    background-color: #c37a3e;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#Sweet-Bakery:hover {
+    background-color: #7c4a21;
+} */
+
+/* MENÚ HAMBURGUESA PARA MÓVILES */
+/* .menubar {
+    display: none;
+    cursor: pointer;
+}
+
+.menubar .line {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+} */
+
+/* ESTILOS RESPONSIVE */
+/* @media (max-width: 900px) {
+    .rightside {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .rightside.open {
+        right: 0;
+    }
+
+    .Icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Icons a {
+        margin: 15px 0;
+        font-size: 18px;
+    }
+
+    .close-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+    }
+
+    .social {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .social a {
+        margin: 5px 0;
+    }
+
+    .menubar {
+        display: block;
+    }
+} */
+</style> -->

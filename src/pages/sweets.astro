@@ -1,0 +1,113 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+
+const productos = [
+    { nombre: "Rasmalai", precio: "$5.00", cantidad: "6 piezas", img: "https://res.cloudinary.com/dwhbgia5f/image/upload/v1738347094/pexels-suzyhazelwood-1126359_a4jffs.jpg" },
+    { nombre: "Soan Papdi", precio: "$3.00", cantidad: "125 g", img: "https://res.cloudinary.com/dwhbgia5f/image/upload/v1738347094/pexels-suzyhazelwood-1126359_a4jffs.jpg" },
+    { nombre: "Soan Papdi (250 g)", precio: "$5.00", cantidad: "250 g", img: "https://res.cloudinary.com/dwhbgia5f/image/upload/v1738347094/pexels-suzyhazelwood-1126359_a4jffs.jpg" },
+    { nombre: "Soan Papdi (500 g)", precio: "$10.00", cantidad: "500 g", img: "https://res.cloudinary.com/dwhbgia5f/image/upload/v1738347094/pexels-suzyhazelwood-1126359_a4jffs.jpg" },
+    { nombre: "Gulab Jamun", precio: "$6.00", cantidad: "1 kg", img: "https://res.cloudinary.com/dwhbgia5f/image/upload/v1738347094/pexels-suzyhazelwood-1126359_a4jffs.jpg" },
+    { nombre: "Pista Halwa", precio: "$10.00", cantidad: "1 kg", img: "https://res.cloudinary.com/dwhbgia5f/image/upload/v1738347094/pexels-suzyhazelwood-1126359_a4jffs.jpg" },
+    // { nombre: "Barfi", precio: "$6.00", cantidad: "1 kg", img: "https://res.cloudinary.com/dwhbgia5f/image/upload/v1738347094/pexels-suzyhazelwood-1126359_a4jffs.jpg" },
+    // { nombre: "Moti Choor Laddu", precio: "$5.00", cantidad: "1 kg", img: "https://res.cloudinary.com/dwhbgia5f/image/upload/v1738347094/pexels-suzyhazelwood-1126359_a4jffs.jpg" },
+    // { nombre: "Sohan Halwa", precio: "$9.00", cantidad: "1 kg", img: "https://res.cloudinary.com/dwhbgia5f/image/upload/v1738347094/pexels-suzyhazelwood-1126359_a4jffs.jpg" },
+    // { nombre: "Akhroat Halwa", precio: "$10.00", cantidad: "1 kg", img: "https://res.cloudinary.com/dwhbgia5f/image/upload/v1738347094/pexels-suzyhazelwood-1126359_a4jffs.jpg" }
+];
+---
+
+<Layout title="Dulces Tradicionales" description="Descubre nuestra selección de dulces tradicionales.">
+    
+    <!-- HERO COMPONENT -->
+    <!-- <Hero 
+        title="Bienvenidos a nuestra Dulcería 🍬" 
+        subtitle="Elaboramos los dulces más deliciosos con ingredientes de alta calidad."
+        buttonText="Contáctanos"
+        buttonLink="/#contact"
+        image='https://res.cloudinary.com/dwhbgia5f/image/upload/v1738347096/pexels-fotios-photos-1129510_d3inxc.jpg'
+    /> -->
+
+    <!-- MENÚ DE DULCES -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Nuestros Dulces</h2>
+            <p>Prueba nuestras especialidades dulces, elaboradas con amor y tradición.</p>
+            <div class="menu-items">
+                {productos.map(producto => (
+                    <div class="menu-item">
+                        <img src={producto.img} alt={producto.nombre} />
+                        <h3>{producto.nombre}</h3>
+                        <p>{producto.precio} <span>({producto.cantidad})</span></p>
+                        <a href="#" class="btn-secondary">Ordenar</a>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE OPINIONES -->
+    <section id="feedback" class="feedback">
+        <h2>¿Qué dicen nuestros clientes?</h2>
+        <p>Déjanos tu opinión y ayúdanos a mejorar.</p>
+        <a href="/#contact" class="btn-primary">Dejar Opinión</a>
+    </section>
+
+</Layout>
+
+<style>
+
+/* MENÚ */
+.menu {
+    padding: 50px 0;
+    background-color: #fff8e1;
+    text-align: center;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.menu-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.menu-item h3 {
+    margin: 10px 0;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #c37a3e;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #7c4a21;
+    color: white;
+}
+
+/* OPINIONES */
+.feedback {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #ffebc9;
+}
+
+</style>

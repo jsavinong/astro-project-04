@@ -1,0 +1,261 @@
+---
+const { title, subtitle, buttonText, buttonLink, image } = Astro.props;
+---
+
+<header class="header" style={`background-image: url('${image}')`}>
+    <nav class="Navbar-Menu">
+        <div class="menu">
+            <!-- LOGO -->
+            <div class="leftside">
+                <a href="/">
+                    <img src="https://res.cloudinary.com/dwhbgia5f/image/upload/v1738418035/Dise%C3%B1o_sin_t%C3%ADtulo_ptgdsw.png" alt="Logotipo de la dulcería">
+                </a>
+            </div>
+
+            <!-- MENÚ PARA ESCRITORIO Y MÓVIL -->
+            <div class="rightside" id="rightside">
+                <nav class="Icons">
+                    <a href="/">Inicio</a>
+                    <a href="#about">Nosotros</a>
+                    <a href="#menu">Menú</a>
+                    <a href="#gallery">Galería</a>
+                    <a href="#feedback">Opiniones</a>
+                    <a href="#contact">Contacto</a>
+                    <i class="fas fa-times-circle close-icon" id="closeMenu"></i>
+
+                    <div class="social">
+                        <li id="Border"></li>
+                        <!-- <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a> -->
+                        <!-- <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a> -->
+                        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <!-- <a href="/sweets" id="Sweet-Bakery">Dulcería</a> -->
+                    </div>
+                </nav>
+            </div>
+
+            <!-- BOTÓN HAMBURGUESA PARA MÓVILES -->
+            <div class="menubar" id="menuToggle">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+            <!-- HERO SECTION -->
+    <!-- <section class="hero">
+        <div class="hero-content">
+            <h1>{title}</h1>
+            <p>{subtitle}</p>
+            {buttonText && buttonLink && (
+                <a href={buttonLink} class="btn-primary">{buttonText}</a>
+            )}
+        </div>
+    </section> -->
+        <div class="heading" >
+            <h2>Bienvenidos a Dulce's Faringthon 🍬</h2>
+            <p>Disfruta de los mejores dulces y postres, hechos con amor y los mejores ingredientes. </p>
+            <a href="#contact"><i class="fal fa-phone-rotary"></i>Contáctanos</a>
+        </div>
+        <div class="Scroll-Arrow" id="topbutton">
+            <a href="#"><i class="fal fa-arrow-up"></i></a>
+        </div>
+    </nav>
+
+
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menuToggle");
+        const closeMenu = document.getElementById("closeMenu");
+        const rightside = document.getElementById("rightside");
+
+        if (menuToggle && rightside) {
+            menuToggle.addEventListener("click", () => {
+                rightside.classList.toggle("open");
+            });
+        }
+
+        if (closeMenu && rightside) {
+            closeMenu.addEventListener("click", () => {
+                rightside.classList.remove("open");
+            });
+        }
+    });
+</script>
+
+<style>
+/* ESTILOS GENERALES */
+.header {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+}
+
+/* NAVBAR */
+.Navbar-Menu {
+    width: 100%;
+    padding: 15px 30px;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.leftside img {
+    width: 200px;
+}
+
+.rightside {
+    display: flex;
+    align-items: center;
+}
+
+.Icons a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.Icons a:hover {
+    color: #fdd835;
+}
+
+.social {
+    display: inline;
+    align-items: center;
+}
+
+.social a {
+    margin-left: 10px;
+    font-size: 18px;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.social a:hover {
+    color: #fdd835;
+}
+
+.close-icon{
+    display: none;
+}
+/* MENÚ HAMBURGUESA */
+.menubar {
+    display: none;
+    cursor: pointer;
+}
+
+.menubar .line {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+@media (max-width: 900px) {
+    .rightside {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .rightside.open {
+        right: 0;
+    }
+
+    .Icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Icons a {
+        margin: 15px 0;
+        font-size: 18px;
+        color:white;
+    }
+
+    .close-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        display: block;
+    }
+
+    .menubar {
+        display: block;
+    }
+
+    #Border{
+        display:none;
+    }
+}
+
+/* HERO */
+.hero {
+    height: calc(80vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+}
+
+.hero-content p {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fdd835;
+    color: black;
+    text-decoration: none;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.btn-primary:hover {
+    background-color: #ffca28;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .btn-primary {
+        font-size: 1rem;
+    }
+}
+</style>
