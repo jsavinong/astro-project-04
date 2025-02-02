@@ -190,6 +190,7 @@
 }
 .second-Sec img{
     background-attachment: fixed;
+    border-radius:5%;
 }
 .second-Sec h2{
     text-align: left;
