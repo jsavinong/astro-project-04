@@ -1,10 +1,20 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  outDir: 'dist', // Asegura la carpeta de salida para Netlify
+    outDir: 'dist',
     build: {
-        assets: './', // Asegura rutas relativas
+        assets: '',
     },
-//   site: 'https://dulceriatemplate.netlify.app', // Opcional para SEO
-  base: '/', // Importante para rutas en Netlify
+    base: '/',
+    vite: {
+        build: {
+        rollupOptions: {
+            output: {
+            assetFileNames: "assets/[name].[hash][extname]",     
+            entryFileNames: "assets/[name].[hash].js",           
+            chunkFileNames: "assets/[name].[hash].js",           
+            }
+        }
+        }
+    }
 });
