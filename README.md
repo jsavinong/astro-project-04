@@ -1,48 +1,87 @@
-# Astro Starter Kit: Basics
+# Dulcería Landing Page Template 🍬
 
-```sh
-npm create astro@latest -- --template basics
+Landing page moderna y responsiva para una dulcería, desarrollada con [Astro](https://astro.build). Incluye menú de productos, galería, opiniones de clientes y sección de contacto.
+
+---
+
+> **Disclaimer:**  
+> El diseño visual de esta landing page no es de mi autoría. Este template es una adaptación/refactorización con fines educativos y de práctica.  
+> Si eres el autor original y deseas atribución o solicitar cambios, por favor contáctame.
+
+---
+
+## 🖼️ Hero Section
+
+A continuación puedes incluir una imagen representativa de la sección principal (Hero):
+
+![Hero Section](https://res.cloudinary.com/dwhbgia5f/image/upload/v1759184999/coverdulceria_kua63x.png)
+
+---
+
+## 🚀 Características
+
+- **Diseño atractivo y responsivo** (desktop y móvil)
+- **Menú de productos** con imágenes y precios
+- **Galería de fotos** de productos y local
+- **Opiniones de clientes**
+- **Sección de contacto** con dirección, teléfono y horarios
+- **Footer con ubicación en Google Maps**
+- **Integración con FontAwesome para íconos sociales**
+- **Estilos personalizados en CSS**
+
+## 📁 Estructura del Proyecto
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
 ├── public/
+│   ├── styles/
+│   ├── webfonts/
 │   └── favicon.svg
 ├── src/
+│   ├── components/
+│   │   ├── Header.astro
+│   │   ├── Navbar.astro
+│   │   ├── Hero.astro
+│   │   └── Footer.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
-│       └── index.astro
-└── package.json
+│       ├── index.astro
+│       └── sweets.astro
+├── package.json
+└── astro.config.mjs
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🧑‍💻 Instalación y uso
 
-## 🧞 Commands
+1. Instala dependencias:
+   ```sh
+   npm install
+   ```
+2. Inicia el servidor de desarrollo:
+   ```sh
+   npm run dev
+   ```
+3. Accede a [http://localhost:4321](http://localhost:4321) en tu navegador.
 
-All commands are run from the root of the project, from a terminal:
+## 🛠️ Personalización
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- Edita los productos en [`src/pages/sweets.astro`](src/pages/sweets.astro)
+- Cambia imágenes y textos en [`src/pages/index.astro`](src/pages/index.astro)
+- Modifica estilos en [`public/styles/home.css`](public/styles/home.css) y [`public/styles/media.css`](public/styles/media.css)
+- Actualiza datos de contacto y redes en [`src/components/Footer.astro`](src/components/Footer.astro) y [`src/components/Header.astro`](src/components/Header.astro)
 
-## 👀 Want to learn more?
+## 📦 Build para producción
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```sh
+npm run build
+```
+
+## 📚 Más información
+
+- [Documentación Astro](https://docs.astro.build)
+- [Guía de estructura de proyectos Astro](https://docs.astro.build/en/basics/project-structure/)
+
+---
+
+¡Personaliza este template y haz que tu dulcería destaque en la web!
